@@ -14,6 +14,6 @@ type Item struct {
 	RSCustomerID string  `bson:"rsCustomerID,omitempty" json:"rsCustomerID,omitempty"`
 	SKU          string  `bson:"sku,omitempty" json:"sku,omitempty"`
 	Timestamp    int64   `bson:"timestamp,omitempty" json:"timestamp,omitempty"`
-	Weight       float64 `bson:"totalWeight,omitempty" json:"totalWeight,omitempty"`
+	TotalWeight  float64 `bson:"totalWeight,omitempty" json:"totalWeight,omitempty"`
 	UPC          string  `bson:"upc,omitempty" json:"upc,omitempty"`
 }

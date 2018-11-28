@@ -69,7 +69,7 @@ var _ = Describe("EventTest", func() {
 				RSCustomerID: custID.String(),
 				SKU:          "test-sku",
 				Timestamp:    time.Now().UTC().Unix(),
-				Weight:       4.7,
+				TotalWeight:       4.7,
 				UPC:          "test-upc",
 			}
 			marshalItem, err := json.Marshal(mockItem)
@@ -125,7 +125,7 @@ var _ = Describe("EventTest", func() {
 				RSCustomerID: custID.String(),
 				SKU:          "test-sku",
 				Timestamp:    time.Now().UTC().Unix(),
-				Weight:       4.7,
+				TotalWeight:       4.7,
 				UPC:          "test-upc",
 			}
 			_, err = coll.InsertOne(mockItem)
@@ -182,7 +182,7 @@ var _ = Describe("EventTest", func() {
 				RSCustomerID: custID.String(),
 				SKU:          "test-sku",
 				Timestamp:    time.Now().UTC().Unix(),
-				Weight:       4.7,
+				TotalWeight:       4.7,
 				UPC:          "test-upc",
 			}
 			_, err = coll.InsertOne(mockItem)
@@ -233,7 +233,7 @@ var _ = Describe("EventTest", func() {
 					Expect(updatedItem).To(HaveKeyWithValue("price", mockItem.Price))
 					Expect(updatedItem).To(HaveKeyWithValue("rsCustomerID", mockItem.RSCustomerID))
 					Expect(updatedItem).To(HaveKeyWithValue("sku", mockItem.SKU))
-					Expect(updatedItem).To(HaveKeyWithValue("totalWeight", mockItem.Weight))
+					Expect(updatedItem).To(HaveKeyWithValue("totalWeight", mockItem.TotalWeight))
 					Expect(updatedItem).To(HaveKeyWithValue("upc", mockItem.UPC))
 
 					filter, assertOK := updateResult["filter"].(map[string]interface{})

@@ -131,7 +131,7 @@ var _ = Describe("EventHandler", func() {
 				RSCustomerID: custID.String(),
 				SKU:          "test-sku",
 				Timestamp:    time.Now().UTC().Unix(),
-				Weight:       4.7,
+				TotalWeight:       4.7,
 				UPC:          "test-upc",
 			}
 
