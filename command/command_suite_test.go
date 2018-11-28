@@ -208,7 +208,7 @@ var _ = Describe("CommanHandler", func() {
 					RSCustomerID: custID.String(),
 					SKU:          "test-sku",
 					Timestamp:    time.Now().UTC().Unix(),
-					Weight:       4.7,
+					TotalWeight:       4.7,
 					UPC:          "test-upc",
 				}
 			})
@@ -287,8 +287,8 @@ var _ = Describe("CommanHandler", func() {
 				testError(coll, "AddItem", marshalItem)
 			})
 
-			It("should return error if Weight is missing", func() {
-				item.Weight = 0
+			It("should return error if TotalWeight is missing", func() {
+				item.TotalWeight = 0
 				marshalItem, err := json.Marshal(item)
 				Expect(err).ToNot(HaveOccurred())
 				testError(coll, "AddItem", marshalItem)
@@ -368,7 +368,7 @@ var _ = Describe("CommanHandler", func() {
 				RSCustomerID: custID.String(),
 				SKU:          "test-sku",
 				Timestamp:    time.Now().UTC().Unix(),
-				Weight:       4.7,
+				TotalWeight:       4.7,
 				UPC:          "test-upc",
 			}
 			marshalItem, err := json.Marshal(item)

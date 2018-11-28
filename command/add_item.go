@@ -110,8 +110,8 @@ func validateItem(coll *mongo.Collection, item *model.Item) *cmodel.Error {
 		err := errors.New("missing Timestamp for item")
 		return cmodel.NewError(cmodel.UserError, err.Error())
 	}
-	if item.Weight == 0 {
-		err := errors.New("missing Weight for item")
+	if item.TotalWeight == 0 {
+		err := errors.New("missing TotalWeight for item")
 		return cmodel.NewError(cmodel.UserError, err.Error())
 	}
 	if item.UPC == "" {
